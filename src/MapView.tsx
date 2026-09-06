@@ -364,12 +364,12 @@ export default function MapView() {
   const userLng = 77.2315;
 
   const tileSources = {
-    dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+    dark: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     satellite: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   };
 
   const tileAttrib = tileStyle === "dark"
-    ? '&copy; <a href="https://carto.com">CARTO</a>'
+    ? '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>'
     : '&copy; Esri';
 
   const toggleLayer = (l: MapLayer) =>
@@ -493,7 +493,11 @@ export default function MapView() {
           className="w-full h-full"
           style={{ background: "#09090b" }}
         >
-          <TileLayer url={tileSources[tileStyle]} attribution={tileAttrib} />
+          <TileLayer 
+            url={tileSources[tileStyle]} 
+            attribution={tileAttrib} 
+            className={tileStyle === "dark" ? "dark-map-tiles" : ""}
+          />
 
           {/* Flood zone overlays */}
           {activeLayers.has("floodZones") &&
@@ -586,7 +590,7 @@ export default function MapView() {
 
         {/* Map attribution */}
         <div className="absolute bottom-2 left-2 z-[999] text-[9px] text-zinc-600 bg-zinc-950/70 px-1.5 py-0.5 rounded">
-          © CARTO · OpenStreetMap
+          © OpenStreetMap contributors
         </div>
       </div>
 

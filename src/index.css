@@ -140,3 +140,8 @@ body,
 .hold-bar {
   animation: hold-progress 3s linear forwards;
 }
+
+/* Dark mode map tiles (OpenStreetMap inversion) */
+.dark-map-tiles {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
