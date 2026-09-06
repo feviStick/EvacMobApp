@@ -660,7 +660,7 @@ function ReportView({ onBack }: { onBack: () => void }) {
               <div className="flex gap-3">
                 <Info className="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5" />
                 <p className="text-xs text-sky-200/80 leading-relaxed">
-                  Your report will be analyzed by HydroGuard AI for accuracy and threat level before being published to the community feed.
+                  Your report will be analyzed by EvacNow for accuracy and threat level before being published to the community feed.
                 </p>
               </div>
             </div>
@@ -1054,7 +1054,7 @@ export default function App() {
                 <Droplets className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-xs font-black text-white tracking-tight">HydroGuard AI</div>
+                <div className="text-xs font-black text-white tracking-tight">EvacNow</div>
                 <div className="flex items-center gap-1 text-[10px] text-zinc-500">
                   <MapPin className="w-2.5 h-2.5" />
                   Sector 4, Delhi
